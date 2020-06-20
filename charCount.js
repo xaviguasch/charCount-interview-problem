@@ -3,13 +3,16 @@
 function charCount(str) {
   const resultObj = {}
 
-  let arrChars = str.toLowerCase().split('')
+  const arrChars = str.toLowerCase().split('')
 
   arrChars.forEach((char) => {
-    if (Object.keys(resultObj).includes(char)) {
-      resultObj[char]++
-    } else {
-      resultObj[char] = 1
+    if (/[a-z0-9]/.test(char)) {
+      // if (resultObj[char] > 0) {
+      if (Object.keys(resultObj).includes(char)) {
+        resultObj[char]++
+      } else {
+        resultObj[char] = 1
+      }
     }
   })
 
